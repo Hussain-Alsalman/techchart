@@ -4,8 +4,17 @@
 \alias{find_lines}
 \title{Find enveloping lines of a given time series}
 \usage{
-find_lines(x, tolerance = 2, nlines = 10, pfit = NA, pscore = NA,
-  r.tol = 0.02, theta.tol = 2, s = 2, merge.tol = 2)
+find_lines(
+  x,
+  tolerance = 2,
+  nlines = 10,
+  pfit = NA,
+  pscore = NA,
+  r.tol = 0.02,
+  theta.tol = 2,
+  s = 2,
+  merge.tol = 2
+)
 }
 \arguments{
 \item{x}{xts object representing a time series}
@@ -32,4 +41,3 @@ Find enveloping lines of a given time series
 \seealso{
 \code{\link[techchart]{find.tchannel}}
 }
-

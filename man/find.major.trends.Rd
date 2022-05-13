@@ -20,4 +20,3 @@ Find the top level trends in a time series
 \seealso{
 \code{\link[techchart]{cpt.trend}}
 }
-

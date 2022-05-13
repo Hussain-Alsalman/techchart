@@ -4,8 +4,12 @@
 \alias{find.pattern}
 \title{Find current and/ or forming technical patter}
 \usage{
-find.pattern(x, pattern = pattern.db("HS")[[1]], tolerance = c(0.25, 1),
-  pip.tolerance = c(1.1, 1.5))
+find.pattern(
+  x,
+  pattern = pattern.db("HS")[[1]],
+  tolerance = c(0.25, 1),
+  pip.tolerance = c(1.1, 1.5)
+)
 }
 \arguments{
 \item{x}{xts, a time series in xts format}
@@ -27,4 +31,3 @@ Find current and/ or forming technical patter
 
 \code{\link[techchart]{find.tpattern}}
 }
-

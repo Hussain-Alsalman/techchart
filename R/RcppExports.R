@@ -2,38 +2,38 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 cpt_trend <- function(x, y, Q, minseglen, penalty) {
-    .Call('techchart_cpt_trend', PACKAGE = 'techchart', x, y, Q, minseglen, penalty)
+    .Call('_techchart_cpt_trend', PACKAGE = 'techchart', x, y, Q, minseglen, penalty)
 }
 
 houghtransform <- function(x1, y1, flag, rbucket, abucket, s) {
-    .Call('techchart_houghtransform', PACKAGE = 'techchart', x1, y1, flag, rbucket, abucket, s)
+    .Call('_techchart_houghtransform', PACKAGE = 'techchart', x1, y1, flag, rbucket, abucket, s)
 }
 
 timesTwo <- function(x) {
-    .Call('techchart_timesTwo', PACKAGE = 'techchart', x)
+    .Call('_techchart_timesTwo', PACKAGE = 'techchart', x)
 }
 
 findminima <- function(xmin, xmax, threshold) {
-    .Call('techchart_findminima', PACKAGE = 'techchart', xmin, xmax, threshold)
+    .Call('_techchart_findminima', PACKAGE = 'techchart', xmin, xmax, threshold)
 }
 
 findmaxima <- function(xmin, xmax, threshold) {
-    .Call('techchart_findmaxima', PACKAGE = 'techchart', xmin, xmax, threshold)
+    .Call('_techchart_findmaxima', PACKAGE = 'techchart', xmin, xmax, threshold)
 }
 
 sortoptimaposition <- function(pos, sign, value) {
-    .Call('techchart_sortoptimaposition', PACKAGE = 'techchart', pos, sign, value)
+    .Call('_techchart_sortoptimaposition', PACKAGE = 'techchart', pos, sign, value)
 }
 
 sortoptimasign <- function(pos, sign, value) {
-    .Call('techchart_sortoptimasign', PACKAGE = 'techchart', pos, sign, value)
+    .Call('_techchart_sortoptimasign', PACKAGE = 'techchart', pos, sign, value)
 }
 
 checkoptimasign <- function(sign) {
-    .Call('techchart_checkoptimasign', PACKAGE = 'techchart', sign)
+    .Call('_techchart_checkoptimasign', PACKAGE = 'techchart', sign)
 }
 
 checkoptimapos <- function(pos) {
-    .Call('techchart_checkoptimapos', PACKAGE = 'techchart', pos)
+    .Call('_techchart_checkoptimapos', PACKAGE = 'techchart', pos)
 }
 

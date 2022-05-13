@@ -5,9 +5,14 @@
 
 using namespace Rcpp;
 
+#ifdef RCPP_USE_GLOBAL_ROSTREAM
+Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
+Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
+#endif
+
 // cpt_trend
 IntegerVector cpt_trend(NumericVector x, NumericVector y, int Q, long minseglen, double penalty);
-RcppExport SEXP techchart_cpt_trend(SEXP xSEXP, SEXP ySEXP, SEXP QSEXP, SEXP minseglenSEXP, SEXP penaltySEXP) {
+RcppExport SEXP _techchart_cpt_trend(SEXP xSEXP, SEXP ySEXP, SEXP QSEXP, SEXP minseglenSEXP, SEXP penaltySEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -22,7 +27,7 @@ END_RCPP
 }
 // houghtransform
 DataFrame houghtransform(NumericVector x1, NumericVector y1, int flag, NumericVector rbucket, NumericVector abucket, int s);
-RcppExport SEXP techchart_houghtransform(SEXP x1SEXP, SEXP y1SEXP, SEXP flagSEXP, SEXP rbucketSEXP, SEXP abucketSEXP, SEXP sSEXP) {
+RcppExport SEXP _techchart_houghtransform(SEXP x1SEXP, SEXP y1SEXP, SEXP flagSEXP, SEXP rbucketSEXP, SEXP abucketSEXP, SEXP sSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -38,7 +43,7 @@ END_RCPP
 }
 // timesTwo
 NumericVector timesTwo(NumericVector x);
-RcppExport SEXP techchart_timesTwo(SEXP xSEXP) {
+RcppExport SEXP _techchart_timesTwo(SEXP xSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -49,7 +54,7 @@ END_RCPP
 }
 // findminima
 IntegerMatrix findminima(NumericVector xmin, NumericVector xmax, NumericVector threshold);
-RcppExport SEXP techchart_findminima(SEXP xminSEXP, SEXP xmaxSEXP, SEXP thresholdSEXP) {
+RcppExport SEXP _techchart_findminima(SEXP xminSEXP, SEXP xmaxSEXP, SEXP thresholdSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -62,7 +67,7 @@ END_RCPP
 }
 // findmaxima
 IntegerMatrix findmaxima(NumericVector xmin, NumericVector xmax, NumericVector threshold);
-RcppExport SEXP techchart_findmaxima(SEXP xminSEXP, SEXP xmaxSEXP, SEXP thresholdSEXP) {
+RcppExport SEXP _techchart_findmaxima(SEXP xminSEXP, SEXP xmaxSEXP, SEXP thresholdSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -75,7 +80,7 @@ END_RCPP
 }
 // sortoptimaposition
 IntegerVector sortoptimaposition(IntegerVector pos, IntegerVector sign, NumericVector value);
-RcppExport SEXP techchart_sortoptimaposition(SEXP posSEXP, SEXP signSEXP, SEXP valueSEXP) {
+RcppExport SEXP _techchart_sortoptimaposition(SEXP posSEXP, SEXP signSEXP, SEXP valueSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -88,7 +93,7 @@ END_RCPP
 }
 // sortoptimasign
 IntegerVector sortoptimasign(IntegerVector pos, IntegerVector sign, NumericVector value);
-RcppExport SEXP techchart_sortoptimasign(SEXP posSEXP, SEXP signSEXP, SEXP valueSEXP) {
+RcppExport SEXP _techchart_sortoptimasign(SEXP posSEXP, SEXP signSEXP, SEXP valueSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -101,7 +106,7 @@ END_RCPP
 }
 // checkoptimasign
 bool checkoptimasign(IntegerVector sign);
-RcppExport SEXP techchart_checkoptimasign(SEXP signSEXP) {
+RcppExport SEXP _techchart_checkoptimasign(SEXP signSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -112,7 +117,7 @@ END_RCPP
 }
 // checkoptimapos
 bool checkoptimapos(IntegerVector pos);
-RcppExport SEXP techchart_checkoptimapos(SEXP posSEXP) {
+RcppExport SEXP _techchart_checkoptimapos(SEXP posSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -120,4 +125,22 @@ BEGIN_RCPP
     rcpp_result_gen = Rcpp::wrap(checkoptimapos(pos));
     return rcpp_result_gen;
 END_RCPP
+}
+
+static const R_CallMethodDef CallEntries[] = {
+    {"_techchart_cpt_trend", (DL_FUNC) &_techchart_cpt_trend, 5},
+    {"_techchart_houghtransform", (DL_FUNC) &_techchart_houghtransform, 6},
+    {"_techchart_timesTwo", (DL_FUNC) &_techchart_timesTwo, 1},
+    {"_techchart_findminima", (DL_FUNC) &_techchart_findminima, 3},
+    {"_techchart_findmaxima", (DL_FUNC) &_techchart_findmaxima, 3},
+    {"_techchart_sortoptimaposition", (DL_FUNC) &_techchart_sortoptimaposition, 3},
+    {"_techchart_sortoptimasign", (DL_FUNC) &_techchart_sortoptimasign, 3},
+    {"_techchart_checkoptimasign", (DL_FUNC) &_techchart_checkoptimasign, 1},
+    {"_techchart_checkoptimapos", (DL_FUNC) &_techchart_checkoptimapos, 1},
+    {NULL, NULL, 0}
+};
+
+RcppExport void R_init_techchart(DllInfo *dll) {
+    R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
+    R_useDynamicSymbols(dll, FALSE);
 }

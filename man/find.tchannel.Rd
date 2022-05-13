@@ -35,4 +35,3 @@ quantmod::add_TA(tchannel$xlines$minlines[[1]],on=1)
 \seealso{
 \code{\link[techchart]{find_lines}}
 }
-

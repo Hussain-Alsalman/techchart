@@ -20,4 +20,3 @@ Find the last best-fit enveloping lines of a given time series
 \seealso{
 \code{\link[techchart]{find.tchannel}}
 }
-

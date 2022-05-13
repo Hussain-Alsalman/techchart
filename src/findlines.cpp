@@ -4,7 +4,7 @@ using namespace Rcpp;
 
 
 double pi(){
-  return(3.141593);
+  return(M_PI);
 }
 double myabs(double x){
   if(x<0)return (-x);

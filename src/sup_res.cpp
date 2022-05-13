@@ -57,9 +57,16 @@ IntegerMatrix findminima(NumericVector xmin, NumericVector xmax,
 
   for(int i=0; i<n; i++){
 
-    if(xmin[i] < xmin[imin])imin = i;
+    if(xmin[i] < xmin[imin]) imin = i;
+    
     if(xmax[i]/xmin[imin] > threshold[i]){
-      if(max(subset(xmax,(y.row(k))[0],imin))/xmin[imin]> threshold[i]){
+      
+      if(max(
+          subset(
+            xmax,(y.row(k))
+           [0],imin
+          )
+           )/xmin[imin]> threshold[i]){
         (y.row(k))[0] = imin;
         (y.row(k+1))[0] = imin;
         (y.row(k))[1] = -1;

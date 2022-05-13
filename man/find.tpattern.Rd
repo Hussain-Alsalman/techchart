@@ -4,8 +4,14 @@
 \alias{find.tpattern}
 \title{Find matching patterns in a time series}
 \usage{
-find.tpattern(x, pattern = pattern.db("HS")[[1]], tolerance = 0.25,
-  pip.tolerance = 2, find.all = TRUE, trend.adjusted = FALSE)
+find.tpattern(
+  x,
+  pattern = pattern.db("HS")[[1]],
+  tolerance = 0.25,
+  pip.tolerance = 2,
+  find.all = TRUE,
+  trend.adjusted = FALSE
+)
 }
 \arguments{
 \item{x}{xts, a time series in xts format}
@@ -31,4 +37,3 @@ Find matching patterns in a time series
 
 \code{\link[techchart]{find.pattern}}
 }
-

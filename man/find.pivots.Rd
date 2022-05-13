@@ -4,8 +4,14 @@
 \alias{find.pivots}
 \title{Find supports and resitance for a time series}
 \usage{
-find.pivots(x, type = c("SR", "FIB"), tolerance = 0.02, strength = 3,
-  maxline = 10, lookback = 20)
+find.pivots(
+  x,
+  type = c("SR", "FIB"),
+  tolerance = 0.02,
+  strength = 3,
+  maxline = 10,
+  lookback = 20
+)
 }
 \arguments{
 \item{x}{xts object, or vector, representing a time series}
@@ -36,4 +42,3 @@ summary(sups)
 quantmod::chart_Series(x)
 quantmod::add_TA(sups$lines[[1]],on=1, lty=2)
 }
-

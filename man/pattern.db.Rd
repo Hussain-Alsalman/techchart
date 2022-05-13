@@ -15,4 +15,3 @@ a list if pattern definition
 \description{
 definition of standard technical patterns
 }
-

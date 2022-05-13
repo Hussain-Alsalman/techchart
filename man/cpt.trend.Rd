@@ -32,4 +32,3 @@ quantmod::add_TA(cpts$segments[[NROW(cpts$segments)]],on=1,lty=3)
 \seealso{
 \code{\link[changepoint]{cpt.mean}}
 }
-
